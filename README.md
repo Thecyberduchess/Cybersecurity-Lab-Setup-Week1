@@ -51,4 +51,3 @@ sudo nmcli connection up "Wired connection 1"
 4. **Drag and drop was unreliable.** It worked once, then showed "Can't drop data to guest". I used the shared Downloads folder and shared clipboard instead.
 
 ## Screenshots
-(Added in the next step.)
