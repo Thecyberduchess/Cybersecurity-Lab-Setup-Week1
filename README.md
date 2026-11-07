@@ -51,3 +51,23 @@ sudo nmcli connection up "Wired connection 1"
 4. **Drag and drop was unreliable.** It worked once, then showed "Can't drop data to guest". I used the shared Downloads folder and shared clipboard instead.
 
 ## Screenshots
+### 1. NAT network set to 10.0.0.0/24
+![NAT network](WK.1%20SCREENSHOTS/1-nat-network-10.0.0.0-24.png)
+
+### 2. Kali IP address 10.0.0.2/24
+![Kali IP address](WK.1%20SCREENSHOTS/2-kali-ip-10.0.0.2.png)
+
+### 3. Internet check (ping google.com)
+![Ping google.com](WK.1%20SCREENSHOTS/3-ping-google.png)
+
+### 4. Shared Downloads folder
+![Shared folder](WK.1%20SCREENSHOTS/4-shared-folder-downloads.png)
+
+### 5. Snapshot
+![Snapshot](WK.1%20SCREENSHOTS/5-snapshot.png)
+
+### Problem 1: NAT network on the wrong range (10.0.2.0/24)
+![Wrong NAT range](WK.1%20SCREENSHOTS/6-problem-wrong-nat-range.png)
+
+### Problem 1: Kali received an automatic address (10.0.2.15)
+![Automatic IP address](WK.1%20SCREENSHOTS/7-problem-dynamic-ip-10.0.2.15.png)
