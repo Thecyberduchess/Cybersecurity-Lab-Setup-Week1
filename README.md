@@ -10,13 +10,22 @@
 
 A home cybersecurity testing lab built with VirtualBox and Kali Linux, connected on a private NAT (Network Address Translation) network.
 
-## My laptop (host machine)
+## 📌 Project Overview
+This project documents how I set up a cybersecurity practice lab on my own laptop using VirtualBox and Kali Linux, on a private NAT (Network Address Translation) network, and the problems I solved along the way.
+
+The purpose of the lab is to create a safe and controlled environment for cybersecurity tools, hands-on repeated practices such as  network scanning, reconnaissance, vulnerability assessment, and other security-testing activities.
+
+As earlier stated, the lab is configured on a private virtual network, so that additional machines can be added and used later as targets for authorized security testing.
+
+## My laptop (host machine) Details
 - Processor: Intel Core i5-6200U @ 2.30 GHz
 - RAM (Random Access Memory): 8 GB (7.88 GB usable)
 - Operating system: Windows 11 Pro
 - Storage: C: drive 237 GB, D: drive 476 GB (virtual machines are stored on D:)
 
-## Lab details
+
+
+## Lab Environment Details
 | Item | Setting |
 |---|---|
 | Virtualization software | VirtualBox 7.2.10 |
@@ -78,4 +87,6 @@ sudo nmcli connection up "Wired connection 1"
 ![Wrong NAT range](WK.1%20SCREENSHOTS/6-problem-wrong-nat-range.png)
 
 ### Problem 1: Kali received an automatic address (10.0.2.15)
-![Automatic IP address](WK.1%20SCREENSHOTS/7-problem-dynamic-ip-10.0.2.15.png)
+![Automatic IP address](WK.1%20SCREENSHOTS/7-problem-dynamic-ip-10.0.2.15.png) 
+
+
