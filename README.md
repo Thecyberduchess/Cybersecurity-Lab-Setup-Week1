@@ -30,46 +30,27 @@ Take a snapshot so the lab can be restored.
 ## Purpose of the Lab
 A safe, separate environment is needed to practise ethical hacking. This lab lets me test tools on virtual machines without touching my real files or network, and the snapshot lets me undo mistakes quickly.
 
-##⚙️Lab Environment Configuration
+## ⚙️Lab Environment Configuration
 | Component | Details |
 |---|---|
-| 💻 Host machine  |HP Laptop (My Laptop)|
-|🖥️ Host OS (Operating System) |
-Windows 11 Pro |
-|🧠 Host RAM 
-(Random Access Memory) |
-8GB |
-|⚡ Host processor |
-Intel Core i5 |
-|🧰 Virtualization software |
-VirtualBox 7.2.10 |
-|🐉 Attacking machine |
-Kali Linux (VM named KALI 1) |
-|🧠 Kali Linux RAM |
-4200 MB |
-|⚡ Kali Linux CPUs 
-(Central Processing Units) |
-2 |
-|💿 VM disk |
-75.51GB |
-|🌐 Virtual network |
-NatNetwork, 10.0.0.0/24, DHCP (Dynamic Host Configuration Protocol) enabled |
-|📡 Network address |
-10.0.0.0/24 |
-|🐧Kali Linux IP Address |
-10.0.0.2/24 |
-|🚪 Default gateway |
-10.0.0.1 |
-|🌍 DNS (Domain Name System) server |
-8.8.8.8 |
-|🔌 Network interface |
-eth0 |
-|🌐Subnet mask |
-255.255.255.0 (/24) |
-|📁 Shared folder |
-Windows Downloads, mounted in Kali at /media/sf_Downloads |
-|📸 Snapshot |
-"WK1 - Kali 10.0.0.2 configured" |
+| 💻 Host machine | HP Laptop (My Laptop) |
+| 🖥️ Host OS (Operating System) | Windows 11 Pro |
+| 🧠 Host RAM (Random Access Memory) | 8GB |
+| ⚡ Host processor | Intel Core i5 |
+| 🧰 Virtualization software | VirtualBox 7.2.10 |
+| 🐉 Attacking machine | Kali Linux (VM named KALI 1) |
+| 🧠 Kali Linux RAM | 4200 MB |
+| ⚡ Kali Linux CPUs (Central Processing Units) | 2 |
+| 💿 VM disk | 75.51GB |
+| 🌐 Virtual network | NatNetwork, 10.0.0.0/24, DHCP (Dynamic Host Configuration Protocol) enabled |
+| 📡 Network address | 10.0.0.0/24 |
+| 🐧 Kali Linux IP Address | 10.0.0.2/24 |
+| 🚪 Default gateway | 10.0.0.1 |
+| 🌍 DNS (Domain Name System) server | 8.8.8.8 |
+| 🔌 Network interface | eth0 |
+| 🌐 Subnet mask | 255.255.255.0 (/24) |
+| 📁 Shared folder | Windows Downloads, mounted in Kali at /media/sf_Downloads |
+| 📸 Snapshot | "WK1 - Kali 10.0.0.2 configured" |
 
 
 ## 🪜Lab Setup Procedure (What I did)
@@ -109,19 +90,12 @@ ls /media/sf_Downloads
 ## Verification Results
 | Test | Result |
 |---|---|
-
-| Kali IP address is 10.0.0.2/24 (ip a) |
-Successful |
-| Internet and DNS (ping -c 4 google.com: 4 of 4 replies, 0% packet loss) |
-Successful |
-| Shared Downloads folder visible in Kali |
-Successful |
-| Shared clipboard between Windows and Kali |
-Successful |
-| Drag and drop |
-Worked once, then unreliable |
-| Snapshot taken |
-Successful |
+| Kali IP address is 10.0.0.2/24 (ip a) | Successful |
+| Internet and DNS (ping -c 4 google.com: 4 of 4 replies, 0% packet loss) | Successful |
+| Shared Downloads folder visible in Kali | Successful |
+| Shared clipboard between Windows and Kali | Successful |
+| Drag and drop | Worked once, then unreliable |
+| Snapshot taken | Successful |
 
 
 ## Problems I faced and how I fixed them
