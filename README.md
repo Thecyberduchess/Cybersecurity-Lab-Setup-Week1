@@ -1,4 +1,12 @@
-# Cybersecurity Lab Setup – Week 1 (WK1-PM1)
+# 🔐 Cybersecurity Lab Setup – Week 1 (WK1-PM1)
+
+![Skill](https://img.shields.io/badge/Skill-Cybersecurity-red)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-v7.2-blue)
+![Kali Linux](https://img.shields.io/badge/OS-Kali_Linux-black)
+![Network](https://img.shields.io/badge/Network-10.0.0.0%2F24-teal)
+![Skill](https://img.shields.io/badge/Skill-Virtualization-red)
+![Focus](https://img.shields.io/badge/Focus-Ethical_Hacking-orange)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 
 A home cybersecurity testing lab built with VirtualBox and Kali Linux, connected on a private NAT (Network Address Translation) network.
 
