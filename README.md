@@ -73,19 +73,43 @@ sudo nmcli connection up "Wired connection 1"
 
 
 ## Commands Used
+
 Check the IP address:
+
+```bash
 ip a
+```
+
 Set a fixed IP address, gateway and DNS server:
+
+```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.method manual ipv4.addresses 10.0.0.2/24 ipv4.gateway 10.0.0.1 ipv4.dns 8.8.8.8
+```
+
 Turn off the DAD (Duplicate Address Detection) delay:
+
+```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+```
+
 Restart the connection so the changes apply:
+
+```bash
 sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
+```
+
 Test internet access and DNS:
+
+```bash
 ping -c 4 google.com
+```
+
 Check the shared folder:
+
+```bash
 ls /media/sf_Downloads
+```
 
 ## Verification Results
 | Test | Result |
