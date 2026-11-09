@@ -1,4 +1,4 @@
-# 🔐 Cybersecurity Lab Setup – Week 1 (WK1-PM1)
+# 🔐 Kali Linux Lab Setup and Network Configuration (WK1-PM1)
 
 ![Skill](https://img.shields.io/badge/Skill-Cybersecurity-red)
 ![VirtualBox](https://img.shields.io/badge/VirtualBox-v7.2-blue)
@@ -23,8 +23,6 @@ As earlier stated, the lab is configured on a private virtual network, so that a
 - Operating system: Windows 11 Pro
 - Storage: C: drive 237 GB, D: drive 476 GB (virtual machines are stored on D:)
 
-
-
 ## Lab Environment Details
 | Item | Setting |
 |---|---|
@@ -37,6 +35,7 @@ As earlier stated, the lab is configured on a private virtual network, so that a
 | Clipboard and drag/drop | Bidirectional |
 | Shared folder | Windows Downloads folder, mounted in Kali at /media/sf_Downloads |
 | Snapshot | "WK1 - Kali 10.0.0.2 configured" |
+
 
 ## What I did
 1. Installed VirtualBox 7.2.10 on Windows.
