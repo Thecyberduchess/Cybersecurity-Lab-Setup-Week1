@@ -17,27 +17,62 @@ The purpose of the lab is to create a safe and controlled environment for cybers
 
 As earlier stated, the lab is configured on a private virtual network, so that additional machines can be added and used later as targets for authorized security testing.
 
-## My laptop (host machine) Details
-- Processor: Intel Core i5-6200U @ 2.30 GHz
-- RAM (Random Access Memory): 8 GB (7.88 GB usable)
-- Operating system: Windows 11 Pro
-- Storage: C: drive 237 GB, D: drive 476 GB (virtual machines are stored on D:)
+## Objectives
+Install and configure VirtualBox
+Import  and configure Kali Linux virtual machine (VM).
+Create a NAT network on the range 10.0.0.0/24.
+Give Kali a fixed IP (Internet Protocol) address: 10.0.0.2/24.
+Verify network connectivity for Kali Linux
+Turn on the shared clipboard, drag and drop, and a shared Downloads folder.
+Confirm that Kali has full internet access.
+Take a snapshot so the lab can be restored.
 
-## Lab Environment Details
-| Item | Setting |
+## Purpose of the Lab
+A safe, separate environment is needed to practise ethical hacking. This lab lets me test tools on virtual machines without touching my real files or network, and the snapshot lets me undo mistakes quickly.
+
+##⚙️Lab Environment Configuration
+| Component | Details |
 |---|---|
-| Virtualization software | VirtualBox 7.2.10 |
-| Attacking machine | Kali Linux (VM named KALI 1) |
-| Network | NatNetwork, 10.0.0.0/24, DHCP (Dynamic Host Configuration Protocol) enabled |
-| Kali IP (Internet Protocol) address | 10.0.0.2/24 |
-| Gateway | 10.0.0.1 |
-| DNS (Domain Name System) server | 8.8.8.8 |
-| Clipboard and drag/drop | Bidirectional |
-| Shared folder | Windows Downloads folder, mounted in Kali at /media/sf_Downloads |
-| Snapshot | "WK1 - Kali 10.0.0.2 configured" |
+| 💻 Host machine  |HP Laptop (My Laptop)|
+|🖥️ Host OS (Operating System) |
+Windows 11 Pro |
+|🧠 Host RAM 
+(Random Access Memory) |
+8GB |
+|⚡ Host processor |
+Intel Core i5 |
+|🧰 Virtualization software |
+VirtualBox 7.2.10 |
+|🐉 Attacking machine |
+Kali Linux (VM named KALI 1) |
+|🧠 Kali Linux RAM |
+4200 MB |
+|⚡ Kali Linux CPUs 
+(Central Processing Units) |
+2 |
+|💿 VM disk |
+75.51GB |
+|🌐 Virtual network |
+NatNetwork, 10.0.0.0/24, DHCP (Dynamic Host Configuration Protocol) enabled |
+|📡 Network address |
+10.0.0.0/24 |
+|🐧Kali Linux IP Address |
+10.0.0.2/24 |
+|🚪 Default gateway |
+10.0.0.1 |
+|🌍 DNS (Domain Name System) server |
+8.8.8.8 |
+|🔌 Network interface |
+eth0 |
+|🌐Subnet mask |
+255.255.255.0 (/24) |
+|📁 Shared folder |
+Windows Downloads, mounted in Kali at /media/sf_Downloads |
+|📸 Snapshot |
+"WK1 - Kali 10.0.0.2 configured" |
 
 
-## What I did
+## 🪜Lab Setup Procedure (What I did)
 1. Installed VirtualBox 7.2.10 on Windows.
 2. Imported Kali Linux as a virtual machine.
 3. Created the NAT network `NatNetwork` with the range 10.0.0.0/24.
@@ -55,10 +90,39 @@ sudo nmcli connection up "Wired connection 1"
 
 8. Tested the lab and took a snapshot.
 
-## Verification
-- `ip a` shows `10.0.0.2/24` on eth0.
-- `ping -c 4 google.com` returned 4 of 4 replies with 0% packet loss, so internet and DNS work.
-- `ls /media/sf_Downloads` lists my Windows Downloads files.
+
+## Commands Used
+Check the IP address:
+ip a
+Set a fixed IP address, gateway and DNS server:
+sudo nmcli connection modify "Wired connection 1" ipv4.method manual ipv4.addresses 10.0.0.2/24 ipv4.gateway 10.0.0.1 ipv4.dns 8.8.8.8
+Turn off the DAD (Duplicate Address Detection) delay:
+sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+Restart the connection so the changes apply:
+sudo nmcli connection down "Wired connection 1"
+sudo nmcli connection up "Wired connection 1"
+Test internet access and DNS:
+ping -c 4 google.com
+Check the shared folder:
+ls /media/sf_Downloads
+
+## Verification Results
+| Test | Result |
+|---|---|
+
+| Kali IP address is 10.0.0.2/24 (ip a) |
+Successful |
+| Internet and DNS (ping -c 4 google.com: 4 of 4 replies, 0% packet loss) |
+Successful |
+| Shared Downloads folder visible in Kali |
+Successful |
+| Shared clipboard between Windows and Kali |
+Successful |
+| Drag and drop |
+Worked once, then unreliable |
+| Snapshot taken |
+Successful |
+
 
 ## Problems I faced and how I fixed them
 1. **Wrong network range.** My NatNetwork was set to 10.0.2.0/24, so Kali got 10.0.2.15 automatically. I changed the IPv4 prefix to 10.0.0.0/24 and set the static address.
@@ -66,7 +130,7 @@ sudo nmcli connection up "Wired connection 1"
 3. **Missing settings.** The clipboard options were not under "Advanced" in this VirtualBox version; they are in General > Features. The shared folder option was called "Make Global", not "Make Permanent".
 4. **Drag and drop was unreliable.** It worked once, then showed "Can't drop data to guest". I used the shared Downloads folder and shared clipboard instead.
 
-## Screenshots
+## Lab Evidence Screenshots 
 ### 1. NAT network set to 10.0.0.0/24
 ![NAT network](WK.1%20SCREENSHOTS/1-nat-network-10.0.0.0-24.png)
 
@@ -88,4 +152,5 @@ sudo nmcli connection up "Wired connection 1"
 ### Problem 1: Kali received an automatic address (10.0.2.15)
 ![Automatic IP address](WK.1%20SCREENSHOTS/7-problem-dynamic-ip-10.0.2.15.png) 
 
-
+## Author
+Clementina Oluchi A.
